@@ -1,0 +1,36 @@
+<app-float-icon [icon]="'x'" [pathUrl]="'/'"></app-float-icon>
+<form novalidate [formGroup]="newBook">
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="add name"
+      class="form-control"
+      formControlName="name"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="add author"
+      class="form-control"
+      formControlName="author"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="add url image"
+      class="form-control"
+      formControlName="imageUrl"
+    />
+  </div>
+  <div class="form-group">
+    <textarea
+      type="text"
+      placeholder="add description"
+      class="form-control"
+      formControlName="description"
+    ></textarea>
+  </div>
+  <button (click)="addNewBook()" class="btn btn-primary">Add new book</button>
+</form>

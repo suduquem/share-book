@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -88,7 +88,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -119,6 +119,15 @@
           }
         }
       }
-    }},
-  "defaultProject": "share-book"
+    }
+  },
+  "defaultProject": "share-book",
+  "cli": {
+    "analytics": "35aaa8dd-1832-46d5-b468-e961705cad00"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  }
 }

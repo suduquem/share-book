@@ -1,0 +1,16 @@
+<!-- Se le manda el icono al componente de float-icon -->
+<app-float-icon [icon]="'+'" [pathUrl]="'/create'"></app-float-icon>
+
+<!-- Solo se renderiza si BookList tiene elementos -->
+<div *ngIf="bookList.length" class="p-5">
+  <div class="row">
+    <div class="col" *ngFor="let book of bookList">
+      <app-card
+        [title]="book.name"
+        [author]="book.author"
+        [imageUrl]="book.imageUrl"
+        [description]="book.description"
+      ></app-card>
+    </div>
+  </div>
+</div>
