@@ -1,11 +1,12 @@
 <app-float-icon [icon]="'x'" [pathUrl]="'/'"></app-float-icon>
-<form novalidate [formGroup]="newBook">
+<form (submit)="onSubmit()">
   <div class="form-group">
     <input
+      [(ngModel)]="name"
+      name="name"
       type="text"
       placeholder="add name"
       class="form-control"
-      formControlName="name"
     />
   </div>
   <div class="form-group">
@@ -13,7 +14,8 @@
       type="text"
       placeholder="add author"
       class="form-control"
-      formControlName="author"
+      [(ngModel)]="author"
+      name="author"
     />
   </div>
   <div class="form-group">
@@ -21,7 +23,8 @@
       type="text"
       placeholder="add url image"
       class="form-control"
-      formControlName="imageUrl"
+      [(ngModel)]="imageUrl"
+      name="imageUrl"
     />
   </div>
   <div class="form-group">
@@ -29,8 +32,11 @@
       type="text"
       placeholder="add description"
       class="form-control"
-      formControlName="description"
+      [(ngModel)]="description"
+      name="description"
     ></textarea>
   </div>
-  <button (click)="addNewBook()" class="btn btn-primary">Add new book</button>
+  <!-- Si se usara la función addNewBook, habría que agregarle al botón: -->
+  <!-- (click)="addNewBook()" -->
+  <button type="submit" class="btn btn-primary">Add new book</button>
 </form>
