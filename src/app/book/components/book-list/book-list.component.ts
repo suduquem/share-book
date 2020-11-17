@@ -31,16 +31,16 @@ export class BookListComponent implements OnInit {
   // Solo se ejecuta 1 vez, cuando se carga el componente
   ngOnInit(): void {
     // Este de behavior subject, trae lo últimpo que haya, todos los libros
-    this.bookList = this.bookManagerServiceService.getBookList();
-
-    console.log('lista libros', this.bookList);
+    // this.bookList = this.bookManagerServiceService.getBookList();
+    // console.log('lista libros', this.bookList);
 
     // Todos los datos
     // ventaja de suscribirse es que cada que se actualice el booklist va a traer el último dato
     // se pueden manipular luego los datos
-    this.bookManagerServiceService.bookList.subscribe((books) =>
-      console.log('books agregados', books)
-    );
+    this.bookManagerServiceService.bookList$.subscribe((books) => {
+      this.bookList = books;
+      console.log('books agregados', books);
+    });
 
     // this.observables();
     // this.operators();
